@@ -42,7 +42,7 @@ namespace Chat.Client.Controllers
         }
 
         // POST api/values
-        public IHttpActionResult Post([FromBody]string text)
+        public IHttpActionResult Post([FromUri]string text)
         {
             var currentUserId = this.User.Identity.GetUserId();
             if (currentUserId == null)
