@@ -1,11 +1,13 @@
-﻿using Chat.Model;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using Chat.Model;
+using Chat.Data.Migrations;
 
 namespace Chat.Data
 {
@@ -14,6 +16,7 @@ namespace Chat.Data
         public ChatDbContext()
             : base("ChatDb", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ChatDbContext, Chat.Data.Migrations.Configuration>());
         }
 
         public IDbSet<Message> Messages { get; set; }
