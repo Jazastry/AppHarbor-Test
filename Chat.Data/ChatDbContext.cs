@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Chat.Model;
-using Chat.Data.Migrations;
 
 namespace Chat.Data
 {
@@ -16,7 +15,7 @@ namespace Chat.Data
         public ChatDbContext()
             : base("ChatDb", throwIfV1Schema: false)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ChatDbContext, Chat.Data.Migrations.Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ChatDbContext, Chat.Data.Migrations.ChadDbConfiguration>());
         }
 
         public IDbSet<Message> Messages { get; set; }
@@ -32,5 +31,10 @@ namespace Chat.Data
         {
             return new ChatDbContext();
         }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    Database.SetInitializer(new MigrateDatabaseToLatestVersion<ChatDbContext, Chat.Data.Migrations.ChadDbConfiguration>());
+        //}
     }
 }

@@ -5,9 +5,9 @@ namespace Chat.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<Chat.Data.ChatDbContext>
+    public sealed class ChadDbConfiguration : DbMigrationsConfiguration<Chat.Data.ChatDbContext>
     {
-        public Configuration()
+        public ChadDbConfiguration()
         {
             this.AutomaticMigrationsEnabled = true;
             this.AutomaticMigrationDataLossAllowed = true;
