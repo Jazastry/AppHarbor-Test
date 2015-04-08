@@ -54,7 +54,7 @@ namespace Chat.Data
             if (!this.repositories.ContainsKey(type))
             {
                 var repositoryType = typeof(GenericRepository<T>);
-                if (type == typeof(UserRepository))
+                if (type.IsAssignableFrom(typeof(User)))
                 {
                     repositoryType = typeof(UserRepository);
                 }

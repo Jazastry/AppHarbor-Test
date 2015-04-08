@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloApp", "HelloApp\HelloApp.csproj", "{D2A56E52-0781-47EA-A27A-00DC9D2D16E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoTestApp", "HelloApp\MongoTestApp.csproj", "{D2A56E52-0781-47EA-A27A-00DC9D2D16E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Model", "Chat.Model\Chat.Model.csproj", "{7FAE6114-9D76-4622-B0FA-71F27F2BE86C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{A6D18E36-6420-4875-AB14-26262BDA7C12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoTests", "Tests\MongoTests.csproj", "{A6D18E36-6420-4875-AB14-26262BDA7C12}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Data", "Chat.Data\Chat.Data.csproj", "{0C241310-C531-4623-83D3-0370D01B1F35}"
 EndProject
