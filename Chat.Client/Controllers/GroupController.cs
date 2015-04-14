@@ -20,7 +20,10 @@ namespace Chat.Client.Controllers
         {
             
         }
-        public IHttpActionResult Post([FromUri]string name)
+
+        [HttpPost]
+        [Route("PostGroup")]
+        public IHttpActionResult PostGroup([FromUri]string name)
         {
             if (this.Data.Groups.All().Where(g => g.Name == name).Any())
 	        {

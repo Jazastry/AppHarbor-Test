@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using Chat.Data.Repositories;
 using Chat.Data;
@@ -25,24 +26,20 @@ namespace Chat.Client.Controllers
         public MessagesController(IChatData data)
             : base (data)
         {
-
         }
 
-
-        // GET api/values
-        public IEnumerable<string> Get()
+        // GET api/messages
+        [HttpGet]
+        [Route("GetAll")]
+        public IEnumerable<string> GetAll()
         {
             return this.Data.Messages.All().Select(m => m.MessageText).ToList();
         }
 
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        public IHttpActionResult Post([FromUri]string text)
+        // POST api/messages
+        [HttpPost]
+        [Route("PostMessage")]
+        public IHttpActionResult Post([FromUri]string text, int groupId)
         {
             var currentUserId = this.User.Identity.GetUserId();
             if (currentUserId == null)
@@ -55,22 +52,12 @@ namespace Chat.Client.Controllers
                 MessageText = text,
                 Time = DateTime.Now,
                 UserId = currentUserId,
-                GroupId = 1
+                GroupId = groupId
             };
-
+            
             this.Data.Messages.Add(newMessage);
             this.Data.SaveChanges();
             return Ok();
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
         }
     }
 }

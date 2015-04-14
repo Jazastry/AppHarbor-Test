@@ -71,6 +71,7 @@ namespace Chat.Client.Controllers
         [Route("Logout")]
         public IHttpActionResult Logout()
         {
+            
             Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
             return Ok();
         }
